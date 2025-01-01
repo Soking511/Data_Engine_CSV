@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "1234567-89ab-cdef-0123-456789abcdef",
+		"name": "DataEngine API",
+		"description": "Collection for DataEngine API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/upload",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "upload"],
+					"description": "Upload a file for processing"
+				}
+			}
+		},
+		{
+			"name": "Process Multiple Files",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "",
+							"description": "Multiple files can be selected"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/process",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "process"],
+					"description": "Process multiple files simultaneously"
+				}
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
